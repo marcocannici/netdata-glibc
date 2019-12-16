@@ -37,3 +37,5 @@ RUN ALPINE_GLIBC_BASE_URL="https://github.com/sgerrand/alpine-pkg-glibc/releases
 
 ENV LANG=C.UTF-8
 HEALTHCHECK CMD curl --fail http://localhost:19999/ || exit 1
+# ensure that nvidia-smi is on the PATH
+ENV PATH="/usr/local/nvidia/bin:${PATH}"
